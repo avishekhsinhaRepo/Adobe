@@ -1,0 +1,11 @@
+<div data-sly-use.employee="com.aem.geeks.core.models.Employee"></div>
+
+<p>${employee.firstName}</p>
+<p>${employee.lastName}</p>
+<p>${employee.IsPermanent}</p>
+
+<h1>Calling a Service via Sling Models</h1>
+
+<div data-sly-list.pageItems="${employee.pages}">
+    <p>${pageItemsList.count} : ${pageItems.title}</p>
+</div>
