@@ -26,32 +26,32 @@ public class ChildPagesServiceImpl implements ChildPagesService {
     public Iterator<Page> getPages() {
         try {
             List<String> pageTitles = new ArrayList<String>();
-            ResourceResolver resourceResolver= ResolverUtil.newResolver(resourceResolverFactory);
-            PageManager pageManager=resourceResolver.adaptTo(PageManager.class);
-            Page page=pageManager.getPage("/content/aemgeeks/us/en");
-            Iterator<Page> pages=page.listChildren();
+            ResourceResolver resourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
+            PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+            Page page = pageManager.getPage("/content/aemgeeks/us/en");
+            Iterator<Page> pages = page.listChildren();
             return pages;
         } catch (LoginException e) {
-            logger.info("\n Login Exception {} ",e.getMessage());
+            logger.info("\n Login Exception {} ", e.getMessage());
         }
         return null;
     }
 
     @Activate
-    public void activate(ComponentContext componentContext){
+    public void activate(ComponentContext componentContext) {
         logger.info("************* Activate Method Called ***************");
-        logger.info("\n {} ={}",componentContext.getBundleContext().getBundle().getBundleId(),
+        logger.info("\n {} ={}", componentContext.getBundleContext().getBundle().getBundleId(),
                 componentContext.getBundleContext().getBundle().getSymbolicName());
         logger.info("************* Activate Method End ***************");
     }
 
     @Deactivate
-    public void deActivate(){
+    public void deActivate() {
         logger.info("************* Deactivate Method Called ***************");
     }
 
     @Modified
-    public void modified(){
+    public void modified() {
         logger.info("************* Modified Method Called ***************");
     }
 }

@@ -5,11 +5,11 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.*;
 
-@Component(service = OSGiConfig.class,immediate = true)
-@Designate(ocd = OSGiConfigImpl.ServiceConfig.class )
-public class OSGiConfigImpl implements OSGiConfig{
+@Component(service = OSGiConfig.class, immediate = true)
+@Designate(ocd = OSGiConfigImpl.ServiceConfig.class)
+public class OSGiConfigImpl implements OSGiConfig {
 
-    @ObjectClassDefinition(name="AEM Geeks - OSGi Configuration",
+    @ObjectClassDefinition(name = "AEM Geeks - OSGi Configuration",
             description = "OSGi Configuration demo.")
     public @interface ServiceConfig {
 
@@ -37,15 +37,15 @@ public class OSGiConfigImpl implements OSGiConfig{
                 description = "Add countries locales for which you want to run this service.",
                 type = AttributeType.STRING
         )
-        String[] getCountries() default {"de","in"};
+        String[] getCountries() default {"de", "in"};
 
         @AttributeDefinition(
                 name = "Run Modes",
                 description = "Select Run Mode.",
                 options = {
-                        @Option(label = "Author",value = "author"),
-                        @Option(label = "Publish",value = "publish"),
-                        @Option(label = "Both",value = "both")
+                        @Option(label = "Author", value = "author"),
+                        @Option(label = "Publish", value = "publish"),
+                        @Option(label = "Both", value = "both")
                 },
                 type = AttributeType.STRING)
         String getRunMode() default "both";
@@ -58,30 +58,34 @@ public class OSGiConfigImpl implements OSGiConfig{
     private String runModes;
 
     @Activate
-    protected void activate(ServiceConfig serviceConfig){
-        serviceName=serviceConfig.serviceName();
-        serviceCount=serviceConfig.getServiceCount();
-        liveData=serviceConfig.getLiveData();
-        countries=serviceConfig.getCountries();
-        runModes=serviceConfig.getRunMode();
+    protected void activate(ServiceConfig serviceConfig) {
+        serviceName = serviceConfig.serviceName();
+        serviceCount = serviceConfig.getServiceCount();
+        liveData = serviceConfig.getLiveData();
+        countries = serviceConfig.getCountries();
+        runModes = serviceConfig.getRunMode();
     }
 
     @Override
     public String getServiceName() {
         return serviceName;
     }
+
     @Override
     public int getServiceCount() {
         return serviceCount;
     }
+
     @Override
     public boolean isLiveData() {
         return liveData;
     }
+
     @Override
     public String[] getCountries() {
         return countries;
     }
+
     @Override
     public String getRunModes() {
         return runModes;

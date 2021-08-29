@@ -1,0 +1,9 @@
+<div data-sly-test="${wcmmode.edit}">
+    Edit
+</div>
+<div data-sly-use.student="com.aem.geeks.core.models.StudentModel"></div>
+Student Name:  ${student.studentInfo.firstName},${student.studentInfo.lastName}
+
+<br/>
+<sly data-sly-set.studentData="${student.studentInfo}"></sly>
+   Student Name:  ${studentData.firstName},${studentData.lastName}

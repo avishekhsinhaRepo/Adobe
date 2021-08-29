@@ -1,0 +1,11 @@
+<div data-sly-template.employeeDetailsTemplate="${@ employeeParam}">
+    <ul data-sly-list.cmap="${employeeParam.customMap}">
+        <li>key=${cmap} | value= ${employeeParam.customMap[cmap]}</li>
+    </ul>
+</div>
+
+<div data-sly-template.mapAttribute="${@ mapParam}">
+    <ul data-sly-list="${mapParam}">
+        <li>map-key=${item} | map-value= ${mapParam[item]}</li>
+    </ul>
+</div>

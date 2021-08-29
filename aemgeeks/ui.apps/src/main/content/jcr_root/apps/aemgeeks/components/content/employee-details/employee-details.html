@@ -1,0 +1,78 @@
+<div data-sly-use.employeeDetails="com.aem.geeks.core.models.EmployeeDetails"></div>
+<p>${employeeDetails.employeeName}</p>
+
+
+<div data-sly-list="${employeeDetails.skills}">
+    <p>${item}</p>
+</div>
+
+
+<div data-sly-repeat="${employeeDetails.skills}">
+    <p>${item}</p>
+</div>
+<p>In Operator</p>
+--------------
+
+Searching String : ${'a' in 'abc'} <br/>
+Searching List : ${'sds' in employeeDetails.skills}
+Searching Map : ${'key3' in employeeDetails.customMap}
+
+<h2>Page List</h2>
+<div data-sly-list="${employeeDetails.pages}">
+    <p>${'The PageName is {0} has title {1}' @format=[item.name, item.name]}</p>
+</div>
+
+
+<div data-sly-list="${employeeDetails.customMap}">
+    <p>${'The Employee id {0} has Employee Name {1}' @format=[item,employeeDetails.customMap[item]]}</p>
+</div>
+
+<div>${employeeDetails.skills @join=','}</div>
+<p>Using Custom Variable</p>
+
+<ul data-sly-list.skills="${employeeDetails.skills}">
+    <li>${skillsList.count} -  ${skills}</li>
+</ul>
+
+<p>Iterating a Map</p>
+--------------------
+<ul data-sly-list.cmap="${employeeDetails.customMap}">
+    <li>key=${cmap} | value= ${employeeDetails.customMap[cmap]}</li>
+</ul>
+
+<p>Iterating a List of bean</p>
+--------------------
+<ul data-sly-list.users="${employeeDetails.userList}">
+    <li>${users.userId} | ${users.userName}</li>
+</ul>
+
+<p>Iterating a List of Map</p>
+--------------------
+<ul data-sly-list.cListMap="${employeeDetails.customListOfMap}">
+    <sly data-sly-list="${cListMap}">
+        <li>${item} |${cListMap[item]} </li>
+    </sly>
+</ul>
+<p>Limiting List</p>
+<ul data-sly-list.skills="${employeeDetails.skills @ begin = 0, end =3, step=2}">
+    <li>${skills}</li>
+</ul>
+
+<h3>Templates</h3>
+<div data-sly-use.empDetailsTemplate="sightlyTemplate.html">
+    <sly data-sly-call="${empDetailsTemplate.employeeDetailsTemplate @employeeParam=employeeDetails}"></sly>
+    <sly data-sly-call="${empDetailsTemplate.mapAttribute @mapParam=employeeDetails.customMap}"></sly>
+</div>
+<p>COMPONENT</p>
+
+Component Title:${component.title}
+Component Group:${component.componentGroup}
+Component Description:${component.description}
+
+
+<br/>
+<p>componentContext</p>
+Page Title : ${componentContext.page.title}
+
+${currentDesign.path}
+${resourceDesign.path}

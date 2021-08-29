@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 @Component(service = SearchService.class, immediate = true)
-public class SearchServiceImpl implements SearchService{
+public class SearchServiceImpl implements SearchService {
 
-    private static final Logger LOG= LoggerFactory.getLogger(SearchServiceImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SearchServiceImpl.class);
 
     @Reference
     QueryBuilder queryBuilder;
@@ -35,28 +35,28 @@ public class SearchServiceImpl implements SearchService{
     ResourceResolverFactory resourceResolverFactory;
 
     @Activate
-    public void activate(){
+    public void activate() {
         LOG.info("\n ----ACTIVATE METHOD----");
     }
 
-    public Map<String,String> createTextSearchQuery(String searchText,int startResult,int resultPerPage){
-        Map<String,String> queryMap=new HashMap<>();
-        queryMap.put("path","/content/we-retail");
-        queryMap.put("type","cq:Page");
-        queryMap.put("fulltext",searchText);
-        queryMap.put("p.offset",Long.toString(startResult));
-        queryMap.put("p.limit",Long.toString(resultPerPage));
+    public Map<String, String> createTextSearchQuery(String searchText, int startResult, int resultPerPage) {
+        Map<String, String> queryMap = new HashMap<>();
+        queryMap.put("path", "/content/we-retail");
+        queryMap.put("type", "cq:Page");
+        queryMap.put("fulltext", searchText);
+        queryMap.put("p.offset", Long.toString(startResult));
+        queryMap.put("p.limit", Long.toString(resultPerPage));
         return queryMap;
     }
 
     @Override
-    public JSONObject searchResult(String searchText,int startResult,int resultPerPage){
+    public JSONObject searchResult(String searchText, int startResult, int resultPerPage) {
         LOG.info("\n ----SEARCH RESULT--------");
-        JSONObject searchResult=new JSONObject();
+        JSONObject searchResult = new JSONObject();
         try {
             ResourceResolver resourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
             final Session session = resourceResolver.adaptTo(Session.class);
-            Query query = queryBuilder.createQuery(PredicateGroup.create(createTextSearchQuery(searchText,startResult,resultPerPage)), session);
+            Query query = queryBuilder.createQuery(PredicateGroup.create(createTextSearchQuery(searchText, startResult, resultPerPage)), session);
 
 
             SearchResult result = query.getResult();
@@ -66,26 +66,26 @@ public class SearchServiceImpl implements SearchService{
             long startingResult = result.getStartIndex();
             double totalPages = Math.ceil((double) totalResults / (double) resultPerPage);
 
-            searchResult.put("perpageresult",perPageResults);
-            searchResult.put("totalresults",totalResults);
-            searchResult.put("startingresult",startingResult);
-            searchResult.put("pages",totalPages);
+            searchResult.put("perpageresult", perPageResults);
+            searchResult.put("totalresults", totalResults);
+            searchResult.put("startingresult", startingResult);
+            searchResult.put("pages", totalPages);
 
 
-            List<Hit> hits =result.getHits();
-            JSONArray resultArray=new JSONArray();
-            for(Hit hit: hits){
-                Page page=hit.getResource().adaptTo(Page.class);
-                JSONObject resultObject=new JSONObject();
-                resultObject.put("title",page.getTitle());
-                resultObject.put("path",page.getPath());
+            List<Hit> hits = result.getHits();
+            JSONArray resultArray = new JSONArray();
+            for (Hit hit : hits) {
+                Page page = hit.getResource().adaptTo(Page.class);
+                JSONObject resultObject = new JSONObject();
+                resultObject.put("title", page.getTitle());
+                resultObject.put("path", page.getPath());
                 resultArray.put(resultObject);
-                LOG.info("\n Page {} ",page.getPath());
+                LOG.info("\n Page {} ", page.getPath());
             }
-            searchResult.put("results",resultArray);
+            searchResult.put("results", resultArray);
 
-        }catch (Exception e){
-            LOG.info("\n ----ERROR -----{} ",e.getMessage());
+        } catch (Exception e) {
+            LOG.info("\n ----ERROR -----{} ", e.getMessage());
         }
         return searchResult;
     }
