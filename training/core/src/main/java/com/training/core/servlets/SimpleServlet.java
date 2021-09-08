@@ -39,8 +39,7 @@ import java.io.IOException;
 @Component(service = { Servlet.class })
 @SlingServletResourceTypes(
         resourceTypes="training/components/page",
-        methods=HttpConstants.METHOD_GET,
-        extensions="txt")
+        methods=HttpConstants.METHOD_GET)
 @ServiceDescription("Simple Demo Servlet")
 public class SimpleServlet extends SlingSafeMethodsServlet {
 
