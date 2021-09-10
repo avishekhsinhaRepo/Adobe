@@ -24,3 +24,17 @@
         <pre class="cmp-helloworld__item-output"data-cmp-hook-helloworld="model">${model.message}</pre>
     </div>
 </div>
+
+<sly data-sly-use.trainingConfig="com.training.core.models.TrainingModel"></sly>
+Service Name : ${trainingConfig.serviceName}<br/>
+Service Count : ${trainingConfig.serviceCount}<br/>
+Service RunMode : ${trainingConfig.runModes}<br/>
+IsLivedata : ${trainingConfig.liveData}<br/>
+<ul data-sly-list="${trainingConfig.countries}">
+    <li>${item}</li>
+</ul>
+-----------------------------<br/>
+
+Service Name : ${trainingConfig.serviceNameWithInterface}<br/>
+Service Count : ${trainingConfig.serviceCountWithInterface}<br/>
+Service URL : ${trainingConfig.serviceUrlWithInterface}<br/>
