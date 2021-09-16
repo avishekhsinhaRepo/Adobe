@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-09-13T16:25:45.558+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/training/settings/wcm/templates/poceditabletemplate"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="training/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="training/components/container">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/container"
+                layout="responsiveGrid"/>
+            <image
+                jcr:created="{Date}2021-09-13T16:20:06.918+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-09-13T16:25:19.443+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/image"
+                displayPopupTitle="false"
+                fileName="images.png"
+                isDecorative="false">
+                <file/>
+            </image>
+            <text
+                jcr:created="{Date}2021-09-13T16:20:16.471+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-09-13T16:25:45.557+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/text"
+                text="&lt;p>This is UHG logo&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+        </root>
+    </jcr:content>
+</jcr:root>

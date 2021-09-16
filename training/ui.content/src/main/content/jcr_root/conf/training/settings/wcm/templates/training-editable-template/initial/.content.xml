@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-09-12T20:14:44.663+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/training/settings/wcm/templates/training-editable-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="training/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="training/components/container">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/container"
+                layout="responsiveGrid">
+                <textimage
+                    jcr:created="{Date}2021-09-12T20:11:42.159+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-09-12T20:14:44.662+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/textimage"
+                    alignment="left"
+                    text="&lt;p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?&lt;/p>&#xa;"
+                    textIsRich="true">
+                    <image
+                        jcr:lastModified="{Date}2021-09-12T20:14:21.149+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="UHG LOgo"
+                        sling:resourceType="wcm/foundation/components/image"
+                        fileName="images.png"
+                        height="0"
+                        width="0">
+                        <file/>
+                    </image>
+                </textimage>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

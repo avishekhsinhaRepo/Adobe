@@ -207,10 +207,12 @@
             <container jcr:primaryType="nt:unstructured">
                 <policy_1574694950110
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2021-09-13T16:22:33.659+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:TrainingProject - Content,/apps/training/components/form/container,group:TrainingProject - Structure]">
+                    components="[group:General,group:TrainingProject - Content,/apps/training/components/form/container,group:TrainingProject - Structure]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -237,10 +239,12 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2021-09-13T16:22:54.104+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:TrainingProject - Content,/apps/training/components/form/container]">
+                    components="[group:General,group:TrainingProject - Content,group:TrainingProject - Form]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -275,10 +279,12 @@
                 </policy_649128221558427>
                 <policy_1575040440977
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2021-09-12T18:31:14.383+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="XF Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:TrainingProject - Content,/apps/training/components/form/container]">
+                    components="[group:TrainingProject - Content,group:TrainingProject - Form]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -303,6 +309,24 @@
                         </assetToComponentMapping>
                     </cq:authoring>
                 </policy_1575040440977>
+                <policy_357169864684200
+                    jcr:lastModified="{Date}2021-09-13T15:58:46.588+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Homepage"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="group:General">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_357169864684200>
+                <policy_1631528218993
+                    jcr:lastModified="{Date}2021-09-13T15:48:28.840+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="General"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:General,group:ACS Commons]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1631528218993>
             </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
@@ -331,14 +355,22 @@
             <page jcr:primaryType="nt:unstructured">
                 <policy
                     jcr:description="Includes the required client libraries."
+                    jcr:lastModified="{Date}2021-09-13T14:32:55.618+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Generic Page"
                     sling:resourceType="wcm/core/components/policy/policy"
                     clientlibs="[training.dependencies,training.site]"
-                    clientlibsJsHead="training.dependencies">
+                    clientlibsJsHead="training.dependencies"
+                    mainContentSelector="trainingme">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
         </components>
     </training>
+    <foundation jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <video jcr:primaryType="nt:unstructured"/>
+        </components>
+    </foundation>
 </jcr:root>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2021-09-13T16:08:45.926+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/training/settings/wcm/templates/training-editable-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="training/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="training/components/container">
+            <title
+                jcr:created="{Date}2021-09-12T20:07:14.550+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-09-12T20:07:14.550+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/title"/>
+            <image
+                jcr:created="{Date}2021-09-13T16:07:57.196+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-09-13T16:07:57.196+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/image">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        behavior="none"
+                        offset="0"
+                        width="8"/>
+                </cq:responsive>
+            </image>
+            <text_689274836
+                jcr:created="{Date}2021-09-13T16:07:27.214+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-09-13T16:07:27.214+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/text">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="1"
+                        width="4"/>
+                </cq:responsive>
+            </text_689274836>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/container"
+                editable="{Boolean}true"
+                layout="responsiveGrid"/>
+            <text
+                jcr:created="{Date}2021-09-12T20:08:53.964+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-09-12T20:09:02.827+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="training/components/text"
+                text="&lt;p>Footer&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}768"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,9 @@
+<sly data-sly-use.employee="${'com.training.core.models.Employee' @companyName='ABC'}">
+    ${employee.requestAttribute}
+</sly>
+${employee.firstName} - ${employee.lastName}
+        ${employee.isPermanent}
+    ${employee.fullName}
+${employee.pageTitle}
+        ${employee.resourcePrimaryType}
+Request : ${employee.requestAttribute}
