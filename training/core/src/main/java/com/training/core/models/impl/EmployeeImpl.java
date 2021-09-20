@@ -48,6 +48,10 @@ public class EmployeeImpl implements Employee {
     @Self
     SlingHttpServletRequest slingHttpServletRequest;
 
+    @ResourcePath(path = "/content/training/us/en/homepage")
+    @Via("resource")
+    Resource homePageResource;
+
     @Override
     public String getFirstName() {
         return fname;
@@ -81,5 +85,10 @@ public class EmployeeImpl implements Employee {
     @Override
     public String getRequestAttribute() {
         return rAttribute;
+    }
+
+    @Override
+    public String getHomePageName() {
+        return homePageResource.getName();
     }
 }

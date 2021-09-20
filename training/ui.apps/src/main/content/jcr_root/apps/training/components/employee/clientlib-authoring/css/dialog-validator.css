@@ -1,0 +1,3 @@
+input#fnameid[aria-invalid="true"]{
+    background:red;
+}

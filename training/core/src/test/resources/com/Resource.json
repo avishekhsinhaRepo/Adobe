@@ -1,0 +1,20 @@
+{
+  "resourcePage": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:createdBy": "admin",
+    "jcr:created": "Tue Aug 31 2021 19:39:54 GMT+0530",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "jcr:title": "Home Page",
+      "cq:template": "/conf/training/settings/wcm/templates/page-content",
+      "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+      "jcr:created": "Tue Aug 31 2021 19:39:54 GMT+0530",
+      "cq:lastModified": "Fri Sep 17 2021 02:05:30 GMT+0530",
+      "pageTitle": "Training Project",
+      "sling:resourceType": "training/components/page",
+      "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+      "cq:lastModifiedBy": "admin"
+    }
+  }
+}

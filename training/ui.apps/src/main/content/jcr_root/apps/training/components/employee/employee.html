@@ -7,3 +7,6 @@ ${employee.firstName} - ${employee.lastName}
 ${employee.pageTitle}
         ${employee.resourcePrimaryType}
 Request : ${employee.requestAttribute}
+<div data-sly-use.empNameTemplate="nameTemplate.html">
+    <div data-sly-call="${empNameTemplate.nameTemplate @ employeeFullName=employee.fullName}"></div>
+</div>

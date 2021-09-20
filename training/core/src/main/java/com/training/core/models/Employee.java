@@ -8,4 +8,5 @@ public interface Employee {
     public String getPageTitle();
     public String getResourcePrimaryType();
     public String getRequestAttribute();
+    public String getHomePageName();
 }
