@@ -10,3 +10,17 @@ Request : ${employee.requestAttribute}
 <div data-sly-use.empNameTemplate="nameTemplate.html">
     <div data-sly-call="${empNameTemplate.nameTemplate @ employeeFullName=employee.fullName}"></div>
 </div>
+Data
+<div data-sly-list="${employee.factoryConfigs}">
+    ${item.serviceName} - ${item.serviceURL}
+</div>
+
+Employee Skills
+<div data-sly-list.skill="${employee.employeeSkills}">
+    ${skill}
+</div>
+
+
+<div data-sly-list.books="${employee.books}">
+    ${books["bookname"]} ${books["booksubject"]} ${books["publishyear"]} <br/>
+</div>

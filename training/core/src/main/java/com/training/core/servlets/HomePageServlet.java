@@ -21,17 +21,13 @@ import java.io.IOException;
                         methods = {HttpConstants.METHOD_GET,
                                 HttpConstants.METHOD_POST}, selectors ={"sample"} )
 @ServiceDescription("Home Page Servlet")
-public class HomePageServlet extends SlingAllMethodsServlet {
+public class HomePageServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         Resource resource = request.getResource();
         String  title = resource.getValueMap().get(JcrConstants.JCR_TITLE, StringUtils.EMPTY);
-        System.out.println("Title is ="+title);
-        response.getWriter().println(title);
+        response.getWriter().print(title);
     }
 
-    @Override
-    protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        super.doPost(request, response);
-    }
+
 }
