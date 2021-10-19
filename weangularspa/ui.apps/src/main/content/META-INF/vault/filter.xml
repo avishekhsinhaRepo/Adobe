@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/weangularspa/clientlibs"/>
+    <filter root="/apps/weangularspa/components"/>
+    <filter root="/apps/weangularspa/i18n"/>
+    <filter root="/apps/sling" />
+    <filter root="/apps/msm/weangularspa_blueprint" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/weangularspa" mode="merge"/>
+    <filter root="/content/weangularspa" mode="merge"/>
+    <filter root="/content/dam/weangularspa" mode="merge"/>
+    <filter root="/content/experience-fragments/weangularspa" mode="merge"/>
+</workspaceFilter>
